@@ -37,17 +37,39 @@ header {
     font-size: 1.7em;
 }
 
-.navigation a {
-    color: #260101;
-    text-decoration: none;
-    font-size: 1.1em;
-    font-weight: 700;
-    padding-left: 30px;
-    white-space: nowrap;
+
+.navigation li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
 }
 
-.navigation a:hover {
-    color: rgb(173, 7, 7);
+.navigation li a {
+    text-decoration: none;
+    color: #1a0126;
+    text-transform: uppercase;
+    animation: fade-down 1s;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin: 15px;
+    top: -80px;
+    left: 80px;
+}
+
+.navigation li::after {
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: darkred;
+    position: absolute;
+    left: 0;
+    transition: 0.5s;
+    bottom: -7px;
+}
+
+.navigation li:hover:after {
+    width: 100%;
+    box-shadow: 0 0 7px darkred;
 }
 
 
@@ -108,12 +130,14 @@ section {
     border-radius: 20px;
     transition: 0.7s ease;
     margin: 15px;
+    box-shadow: 0 0 1px #ff0000;
 }
 
 .main-btn:hover {
     background-color: #ff0000;
     transform: scale(1.1);
-
+    transition: 0.7s;
+    box-shadow: 0 0 1px #ff0000, 0 0 4px #ff0000, 0 0 7px #ff0000, 0 0 10px #ff0000;
 }
 
 h4 {
